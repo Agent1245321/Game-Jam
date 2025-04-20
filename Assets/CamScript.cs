@@ -12,7 +12,7 @@ public class CamScript : MonoBehaviour
     private void LateUpdate()
     {
         Camera.main.fieldOfView = 60f - (playScrip.tf * zoomFactor);
-       Debug.Log (60f / 1f + playScrip.tf);
+      
 
         this.transform.position = player.transform.position + offset;
     }
