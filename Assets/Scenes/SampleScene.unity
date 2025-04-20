@@ -269,10 +269,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b3b5524dce43f4db8b55321c7ae59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1899091871}
+  player: {fileID: 1899091876}
   playScrip: {fileID: 1899091877}
+  camPos: {x: 0, y: 0, z: 0}
+  playerPos: {x: 0, y: 0, z: 0}
+  rb: {fileID: 1899091872}
+  velocity: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 1, z: -10}
+  maxLead: 6
+  leadPerc: 0.5
+  xtarget: 0
+  ytarget: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  fluidPos: {x: 0, y: 0, z: 0}
   zoomFactor: 30
+  snapDistance: 0.5
+  lerpFactor: 0.1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,7 +5458,7 @@ MonoBehaviour:
   parryCooldown: 1
   gripWindow: 0.5
   gripCooldown: 1
-  timefreezeamount: 1
+  timefreezeamount: 0.5
   timeslow: 0.075
   tf: 0
   moveSpeed: 0.1
