@@ -25,6 +25,13 @@ public class player : MonoBehaviour
      * 
      * 
      * 
+     * Importsmn:
+     * 
+     * Parry Roof
+     * Reset Cooldown on Wall Parry
+     * 
+     * 
+     * 
      */
     public Animator animator;
 
@@ -41,6 +48,7 @@ public class player : MonoBehaviour
     [Header("References")]
     public GameObject tur;
     public Rigidbody rb;
+    public ParticleSystem effect;
     public Material material0;
     public Material material1;
     public Material material2;
@@ -446,6 +454,7 @@ public class player : MonoBehaviour
     public void Launch(float xmin, float xmax, float ymin, float ymax)
     {
         UnStick();
+       
         dir = new Vector3(Random.Range(xmin, xmax), Random.Range(ymin, ymax), 0);
         xdir = new Vector3(Random.Range(xmin, xmax), 0, 0);
 
@@ -458,6 +467,7 @@ public class player : MonoBehaviour
                 break;
 
             case States.parry:
+                Parry();
                 tf = timefreezeamount;
                 rb.AddForce(dir, ForceMode.VelocityChange);
                 pc = 0;
@@ -474,10 +484,18 @@ public class player : MonoBehaviour
 
         }
 
+       
 
 
 
 
+
+    }
+
+     public void Parry()
+    {
+        
+        effect.Play();
     }
 
 }
